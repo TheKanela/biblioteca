@@ -18,6 +18,7 @@ from django.urls import path,include
 
 from rest_framework import routers
 from books.api import viewSets
+from books import views
 
 rota = routers.DefaultRouter()
 rota.register(r'books',viewSets.BooksViewSets,basename='Books')
@@ -26,5 +27,8 @@ rota.register(r'books',viewSets.BooksViewSets,basename='Books')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include(rota.urls))
+    path('', views.paginaInicial, name="paginaInicial"),
+    path('cadastro', views.cadastro, name="cadastro"),
+    path('lista', views.lista, name="lista")
+    #path('',include(rota.urls))
 ]
