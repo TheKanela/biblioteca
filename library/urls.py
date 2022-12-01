@@ -27,8 +27,8 @@ rota.register(r'books',viewSets.BooksViewSets,basename='Books')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.paginaInicial, name="paginaInicial"),
-    path('cadastro', views.cadastro, name="cadastro"),
-    path('lista', views.lista, name="lista")
-    #path('',include(rota.urls))
+    # path('', views.paginaInicial, name="paginaInicial"),
+    # path('cadastro', views.cadastro, name="cadastro"),
+    # path('lista', views.lista, name="lista")
+    path('',include(rota.urls))
 ]

@@ -16,22 +16,39 @@
         </p></h1>
         <h2>
             <a href="/"><button style="background: #069cc2; border-radius: 12px; padding: 20px; 
-            cursor: pointer; color: #fff; border: none; font-size: 16px;">Pagina inicial</button></a>
+            cursor: pointer; color: #fff; border: none; font-size: 16px; height: 45px;">Pagina inicial</button></a>
             <a href="/cadastro"><button style="background: #069cc2; border-radius: 12px; padding: 20px; 
-            cursor: pointer; color: #fff; border: none; font-size: 16px;">Cadastrar livros</button></a>
+            cursor: pointer; color: #fff; border: none; font-size: 16px;height: 45px;">Cadastrar livros</button></a>
             <a href="/lista"><button style="background: #069cc2; border-radius: 12px; padding: 20px; 
-            cursor: pointer; color: #fff; border: none; font-size: 16px;">Lista dos livros</button></a>
+            cursor: pointer; color: #fff; border: none; font-size: 16px;height: 45px;">Lista dos livros</button></a>
             <a href="https://api.whatsapp.com/send?phone=5511973315964"><button style="background: #069cc2; border-radius: 12px; padding: 20px; 
-            cursor: pointer; color: #fff; border: none; font-size: 16px;">Contato desenvolvedor</button></a>
+            cursor: pointer; color: #fff; border: none; font-size: 16px;height: 45px;">Contato desenvolvedor</button></a>
         </h2>
 
 
-        <h3>
+        <h3 style="text-align:center">
             <br />
             Para realizar o cadastro do livro é necessário preencher todos os campos abaixo:
-
+            <form action="{%url 'cadastro' %}" method="post">
+                {% csrf_token %}
+                <input type="text" id="title" name="title" placeholder="Titulo do livro" style="border-radius: 6px; padding: 10px; 
+                border: none; font-size: 16px; width: 400px; margin-top: 8px;"/><br />
+                <input type="text" id="author" name="author" placeholder="Autor do livro" style="border-radius: 6px; padding: 10px; 
+                border: none; font-size: 16px; width: 400px; margin-top: 8px;"/><br />
+                <input type="text" id="publishingCompany" name="publishingCompany" placeholder="Editora de publicação" style="border-radius: 6px; padding: 10px; 
+                border: none; font-size: 16px; width: 400px; margin-top: 8px;"/><br />
+                <input type="text" id="state" name="state" placeholder="Estado do livro" style="border-radius: 6px; padding: 10px; 
+                border: none; font-size: 16px; width: 200px; margin-top: 8px;"/><br />
+                <input type="number" id="releaseYear" name="releaseYear" placeholder="Ano de lançamento" style="border-radius: 6px; padding: 10px; 
+                border: none; font-size: 16px; width: 200px; margin-top: 8px;"/><br />
+                <input type="number" id="pages" name="pages" placeholder="Número de páginas" style="border-radius: 6px; padding: 10px; 
+                border: none; font-size: 16px; width: 200px; margin-top: 8px;"/><br />
+                
+                <button type="submit"style="background: #069cc2; border-radius: 6px; padding: 10px; 
+                cursor: pointer; border: none; font-size: 16px; color: #fff; margin-top: 8px;">Realizar cadastro</button>
+            </form>
+            
         </h3>
-        
 
     </body>
 </html>
